@@ -4,7 +4,7 @@ let coin = document.querySelector(".coin");
 let flipBtn = document.querySelector("#flip-button");
 let resetBtn = document.querySelector("#reset-button");
 
-flipBtn.addEventListner("click", () => {
+flipBtn.addEventListener("click", () => {
   let i = Math.floor(Math.random() * 2);
   coin.style.animation = "none";
   if (i) {
@@ -22,11 +22,9 @@ flipBtn.addEventListner("click", () => {
   disableButton();
 });
 
-// console.log(i);
-
 function updateStats() {
-  document.querySelector("#heads-count").textContent = `Heads: ${heads}`;
-  document.querySelector("#tails-count").textContent = `Tails: ${tails}`;
+  document.querySelector("#heads-count").textContent = `Орёл: ${heads}`;
+  document.querySelector("#tails-count").textContent = `Решка: ${tails}`;
 }
 
 function disableButton() {
@@ -36,7 +34,7 @@ function disableButton() {
   }, 3000);
 }
 
-resetBtn.addEventListner("click", () => {
+resetBtn.addEventListener("click", () => {
   coin.style.animation = "none";
   heads = 0;
   tails = 0;
